@@ -1,14 +1,14 @@
-package com.hernanurban.bookstore.model;
+package com.hernanurban.bookstore.entity;
 
 import jakarta.persistence.*;
 
 @Entity
 @Table(name = "books")
-public class Book {
+public class BookEntity {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
-    private long id;
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
 
     @Column(name = "title")
     private String title;

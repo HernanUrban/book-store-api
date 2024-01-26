@@ -1,0 +1,23 @@
+spring:
+  datasource:
+    url: jdbc:postgresql://localhost:5432/bookstoredb
+    driverClassName: org.postgresql.Driver
+    username: skynet
+    password: skynet4ever
+    hikari:
+      maximumPoolSize: 5
+      connectionTimeout: 20000
+  jpa:
+    show-sql: true
+    properties:
+      hibernate:
+        ddl-auto: update
+        dialect: org.hibernate.dialect.PostgreSQLDialect
+management:
+  endpoint:
+    health:
+      show-details: "ALWAYS"
+  endpoints:
+    web:
+      exposure:
+        include: "*"
