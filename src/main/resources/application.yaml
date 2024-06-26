@@ -2,4 +2,24 @@ spring:
   profiles:
     active: local-dev
   application:
-    name: bookstore
+    name: ${project.artifactId:bookstore}
+management:
+  endpoints:
+    web:
+      exposure:
+        include:
+          - health
+          - info
+  info:
+    env:
+      enabled: true
+  endpoint:
+    health:
+      show-details: always
+      probes:
+        enabled: true
+info:
+  application:
+    name: '@project.name@'
+    version: '@project.version@'
+    description: '@project.description@'
