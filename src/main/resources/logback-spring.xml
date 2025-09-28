@@ -28,7 +28,15 @@
             </providers>
         </encoder>
     </appender>
+    
+    <appender name="consoleAppender" class="ch.qos.logback.core.ConsoleAppender">
+        <encoder>
+            <pattern>%d{yyyy-MM-dd HH:mm:ss.SSS} [%thread] %-5level %logger{36} - %msg%n</pattern>
+        </encoder>
+    </appender>
+    
     <root level="INFO">
-        <appender-ref ref="jsonConsoleAppender"/>
+        <appender-ref ref="consoleAppender"/>
+        <!--appender-ref ref="jsonConsoleAppender"/ -->
     </root>
 </configuration>
